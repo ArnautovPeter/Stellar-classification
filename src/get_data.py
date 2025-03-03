@@ -1,10 +1,13 @@
-# import pandas as pd
+import pandas as pd
 
 
-# class Data:
-#   @staticmethod
-#   def get_features_train():
-#     return(pd.read_csv("./data/train.csv", index_col=0).iloc[:, 0:5])
+class Data:
+  @staticmethod
+  def get_train():
+    train = pd.read_csv("../data/train.csv", index_col=0)
+    return train.iloc[:, :5], train.iloc[:, 5].to_numpy()
   
-#   @staticmethod
-#   def get_test
+  @staticmethod
+  def get_test():
+    test = pd.read_csv("../data/test.csv", index_col=0)
+    return test.iloc[:, :5], test.iloc[:, 5].to_numpy()
