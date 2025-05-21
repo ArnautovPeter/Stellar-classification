@@ -12,10 +12,10 @@ def metrics(X, Y, to_return=True):  # X predicted, Y real
     print("Precision: ", scores["Precision"])
     print("Recall:    ", scores["Recall"])
     print("F1:        ", scores["F1"])
-    ax = sns.heatmap(confusion_matrix(Y, X), annot=True, vmax=X.size, vmin=-X.size,
-                     fmt="d", cmap="crest")
+    ax = sns.heatmap(confusion_matrix(Y, X), annot=True, vmax=X.size, vmin=0,
+                     fmt="d", cmap="Blues")
     ax.set(xlabel="Predicted class", ylabel="Real class")
     plt.show()
 
     if to_return:
-      return scores
+        return scores
