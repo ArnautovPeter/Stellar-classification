@@ -5,7 +5,7 @@ from matplotlib.colors import ListedColormap
 import numpy as np
 
 
-def metrics(pred, real, to_return=True, output=True, cmap="rocket_r", vmin=0):  # X predicted, Y real
+def metrics(pred, real, to_return=True, output=True, cmap="Blues", vmin=0):  # X predicted, Y real
     X = pred
     Y = real
     if output:
@@ -22,7 +22,7 @@ def metrics(pred, real, to_return=True, output=True, cmap="rocket_r", vmin=0):  
                 "F1": f1_score(Y, X, zero_division=0)}
 
 
-def metrics_balanced(pred, real, to_return=True, output=True, cmap="rocket_r", vmin=0):  # X predicted, Y real
+def metrics_balanced(pred, real, to_return=True, output=True, cmap="Blues", vmin=0):  # X predicted, Y real
     X = pred
     Y = real
     if output:
