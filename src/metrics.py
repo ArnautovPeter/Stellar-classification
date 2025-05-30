@@ -9,7 +9,7 @@ def metrics(pred, real, to_return=True, output=True, cmap="Blues", vmin=0):  # X
     X = pred
     Y = real
     if output:
-        print(classification_report(X, Y, zero_division=0))
+        print(classification_report(Y, X, zero_division=0))
         ax = sns.heatmap(confusion_matrix(Y, X), annot=True, vmax=X.size, vmin=vmin,
                          fmt="d", cmap=cmap)
         ax.set(xlabel="Predicted class", ylabel="Real class")
@@ -26,7 +26,7 @@ def metrics_balanced(pred, real, to_return=True, output=True, cmap="Blues", vmin
     X = pred
     Y = real
     if output:
-        print(classification_report(X, Y, zero_division=0))
+        print(classification_report(Y, X, zero_division=0))
         cm = confusion_matrix(Y, X)
         # all_index = cm.argmax()
         # cm[all_index // cm.shape[0]][all_index % cm.shape[1]] = 0
